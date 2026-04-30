@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "name": "Deshi Shahi Cow",
+    "type": "Cow",
+    "breed": "Local Deshi",
+    "price": 120000,
+    "weight": 280,
+    "age": 3,
+    "location": "Bogura",
+    "description": "Healthy deshi cow suitable for Qurbani. Well fed with natural খাবার.",
+    "image": "https://i.postimg.cc/8cJ9p0Lh/cow1.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 2,
+    "name": "Sahiwal Premium Cow",
+    "type": "Cow",
+    "breed": "Sahiwal",
+    "price": 180000,
+    "weight": 350,
+    "age": 4,
+    "location": "Rajshahi",
+    "description": "High-quality Sahiwal breed. Strong শরীর and ভালো মাংস.",
+    "image": "https://i.postimg.cc/3rZ5mQxk/cow2.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 3,
+    "name": "Black Bengal Goat",
+    "type": "Goat",
+    "breed": "Black Bengal",
+    "price": 25000,
+    "weight": 35,
+    "age": 2,
+    "location": "Kushtia",
+    "description": "Popular Black Bengal goat. ছোট কিন্তু মাংস খুব সুস্বাদু.",
+    "image": "https://i.postimg.cc/W1ZbHk7g/goat1.jpg",
+    "category": "Small Animal"
+  },
+  {
+    "id": 4,
+    "name": "Jamunapari Goat",
+    "type": "Goat",
+    "breed": "Jamunapari",
+    "price": 40000,
+    "weight": 50,
+    "age": 2.5,
+    "location": "Dhaka",
+    "description": "Large Jamunapari goat with ভালো স্বাস্থ্য and attractive look.",
+    "image": "https://i.postimg.cc/fW2pQ0Wv/goat2.jpg",
+    "category": "Small Animal"
+  },
+  {
+    "id": 5,
+    "name": "Friesian Cross Cow",
+    "type": "Cow",
+    "breed": "Friesian Cross",
+    "price": 200000,
+    "weight": 400,
+    "age": 5,
+    "location": "Chattogram",
+    "description": "Imported cross breed. বড় সাইজ and premium quality for Qurbani.",
+    "image": "https://i.postimg.cc/0yTgkX3H/cow3.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 6,
+    "name": "Deshi White Goat",
+    "type": "Goat",
+    "breed": "Local Deshi",
+    "price": 22000,
+    "weight": 30,
+    "age": 1.8,
+    "location": "Mymensingh",
+    "description": "Healthy white goat. সহজে পালন করা and suitable for small families.",
+    "image": "https://i.postimg.cc/Z5m7zK9d/goat3.jpg",
+    "category": "Small Animal"
+  }
+]
