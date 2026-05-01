@@ -4,7 +4,7 @@ import React from 'react';
 const AllAnimalsPage = async () => {
     const res = await fetch('https://livestock-booking-platform-iqbal.vercel.app/data.json');
     const animals = await res.json();
-    console.log(animals);
+
     
     return (
         <div>
