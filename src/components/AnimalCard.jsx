@@ -1,16 +1,34 @@
-import { Card } from '@heroui/react';
+import { Button, Card, Chip, Separator } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
 
 
-const AnimalCard = ({animal}) => {
+const AnimalCard = ({ animal }) => {
     return (
-        <Card>
-            <div>
-                <Image src={animal.image} height={200} width={200} alt={animal.name} />
-                
+        <Card className='border rounded-xl'>
+            <div className='relative w-full aspect-square'>
+                <Image src={animal.image} fill sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' alt={animal.name} className='object-center rounded-xl'/>
 
+                <Chip className='absolute right-2 bottom-2'>{animal.category}</Chip>
             </div>
+
+            <div>
+                <h2 className='font-medium'>{animal.name}</h2>
+            </div>
+
+            <div className='flex gap-2'>
+                <div>
+                    <p>৳ {animal.price}</p>
+                </div>
+
+                <Separator orientation='vertical' />
+
+                <div>
+                    <p>{animal.weight} KG</p>
+                </div>
+            </div>
+
+            <Button variant='outline' className={'w-full'}>Details</Button>
         </Card>
     );
 };

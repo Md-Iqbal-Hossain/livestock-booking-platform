@@ -9,9 +9,9 @@ const TopGenerations = async () => {
     
     return (
         <div>
-            <h1 className='text-2xl font-bold mt-5'>Top Generations</h1>
+            <h1 className='text-2xl font-bold my-5'>Top Generations</h1>
 
-            <div>
+            <div className='grid grid-cols-4 gap-5'>
                 {
                     topAnimals.map(animal => <AnimalCard key={animal.id} animal={animal}/>)
                 }
