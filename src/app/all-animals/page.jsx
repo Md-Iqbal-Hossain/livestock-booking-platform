@@ -1,4 +1,5 @@
 import AnimalCard from '@/components/AnimalCard';
+import AllAnimalsClient from "@/components/AllAnimalsClient";
 import React from 'react';
 
 const AllAnimalsPage = async () => {
@@ -10,9 +11,11 @@ const AllAnimalsPage = async () => {
         <div>
             <h1 className='text-2xl font-bold m-4'>All Animals</h1>
 
-            <div className='grid grid-cols-4 gap-5'>
+            {/* <div className='grid grid-cols-4 gap-5'>
                 {animals.map(animal => <AnimalCard key={animal.id} animal={animal} />)}
-            </div>
+            </div> */}
+
+            <AllAnimalsClient animals={animals} />
         </div>
     );
 };

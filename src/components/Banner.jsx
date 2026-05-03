@@ -16,7 +16,7 @@ const Banner = () => {
           </p>
 
           <div className="flex gap-4">
-            <Link href="#">
+            <Link href="/all-animals">
               <Button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white">
                 Browse Animals
               </Button>
