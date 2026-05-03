@@ -25,7 +25,7 @@ const Navbar = () => {
             height={30}
             className="object-cover h-auto w-auto rounded-4xl"
           />
-          <h3 className="font-black text-lg">Livestock Booking</h3>
+          <h3 className="font-black text-lg">QurbaniHat</h3>
         </div>
 
         <ul className="flex items-center gap-5 text-sm">
@@ -47,10 +47,10 @@ const Navbar = () => {
         <div className="flex gap-4">
           {!user && <ul className="flex items-center text-sm gap-5">
             <li>
-              <Link href={"/signup"}>SignUp</Link>
+              <Link href={"/signup"}>Register</Link>
             </li>
             <li>
-              <Link href={"/signin"}>SignIn</Link>
+              <Link href={"/signin"}>LogIn</Link>
             </li>
           </ul>}
 

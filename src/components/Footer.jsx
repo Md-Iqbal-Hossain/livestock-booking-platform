@@ -195,7 +195,7 @@ const Footer = () => {
             <div className="flex items-center gap-2">
               <Image src="/logo.jpg" alt="logo" width={32} height={32} />
               <h2 className="text-xl font-semibold text-black dark:text-white">
-                Livestock Booking
+                QurbaniHat
               </h2>
             </div>
 

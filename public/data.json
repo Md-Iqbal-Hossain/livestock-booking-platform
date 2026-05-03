@@ -76,5 +76,31 @@
     "description": "Healthy white goat. সহজে পালন করা and suitable for small families.",
     "image": "https://i.ibb.co.com/R4JCX216/Deshi-White-Goat.webp",
     "category": "Small Animal"
+  },
+  {
+    "id": 7,
+    "name": "Red Sindhi Dairy Cow",
+    "type": "Cow",
+    "breed": "Red Sindhi",
+    "price": 160000,
+    "weight": 320,
+    "age": 3.5,
+    "location": "Sirajganj",
+    "description": "Strong and healthy Red Sindhi cow, ideal for both milk and Qurbani use.",
+    "image": "https://i.ibb.co.com/NgS1dyxF/Red-Sindhi-Cow.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 8,
+    "name": "Boer Cross Goat",
+    "type": "Goat",
+    "breed": "Boer Cross",
+    "price": 45000,
+    "weight": 55,
+    "age": 2.2,
+    "location": "Narayanganj",
+    "description": "Premium Boer cross goat with fast growth and excellent meat quality.",
+    "image": "https://i.ibb.co.com/Kx6WSDDY/Boer-Cross-Goat.jpg",
+    "category": "Small Animal"
   }
 ]
