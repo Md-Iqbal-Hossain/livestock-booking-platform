@@ -6,8 +6,11 @@ import Link from "next/link";
 import { useState } from "react";
 
 const Navbar = () => {
-  const userData = authClient.useSession();
-  const user = userData.data?.user;
+  // const userData = authClient.useSession();
+  // const user = userData.data?.user;
+
+  const { data, isPending } = authClient.useSession();
+  const user = data?.user;
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -15,6 +18,15 @@ const Navbar = () => {
     await authClient.signOut();
   }
 
+  if (isPending) {
+  return (
+    <div className="border-b px-2">
+      <nav className="flex justify-between items-center py-3 max-w-7xl mx-auto">
+        <p className="text-sm">Loading...</p>
+      </nav>
+    </div>
+  );
+}
 
   return (
     <div className="border-b px-2">

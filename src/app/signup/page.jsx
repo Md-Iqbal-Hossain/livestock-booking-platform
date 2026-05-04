@@ -39,15 +39,19 @@ export default function SignUpPage() {
     } else {
       toast.success("Account created successfully ✅");
 
+      await authClient.signOut();
+      
       router.push("/signin");
+
+      router.refresh();
     }
   };
 
   const handleGoogleSignUp = async () => {
-      await authClient.signIn.social({
-        provider: 'google'
-      })
-    }
+    await authClient.signIn.social({
+      provider: 'google'
+    })
+  }
 
   return (
     <Card className="border mx-auto w-full max-w-md py-10 mt-5 px-4">
@@ -130,8 +134,8 @@ export default function SignUpPage() {
 
 
       <p className="text-center">Or</p>
-      
-            <Button onClick={handleGoogleSignUp} variant="outline" className={'w-full'}><GrGoogle /> Sign In With Google</Button>
+
+      <Button onClick={handleGoogleSignUp} variant="outline" className={'w-full'}><GrGoogle /> Sign In With Google</Button>
 
     </Card>
   );
