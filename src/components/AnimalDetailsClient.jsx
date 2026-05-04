@@ -8,7 +8,7 @@ const AnimalDetailsClient = ({ animal }) => {
 
   return (
     <div>
-      {/* 🐄 Animal Info */}
+
       <div className="border p-5 rounded-xl">
         <h1 className="text-2xl font-bold">{animal.name}</h1>
         <p>Breed: {animal.breed}</p>
@@ -19,7 +19,6 @@ const AnimalDetailsClient = ({ animal }) => {
         <p className="mt-2">{animal.description}</p>
       </div>
 
-      {/* 🔘 Button */}
       <button
         onClick={() => setShowForm(!showForm)}
         className="mt-5 bg-green-600 text-white px-4 py-2 rounded"
@@ -27,7 +26,6 @@ const AnimalDetailsClient = ({ animal }) => {
         {showForm ? "Close Booking" : "Book Now"}
       </button>
 
-      {/* 📄 Form (toggle) */}
       {showForm && <BookingForm />}
     </div>
   );

@@ -1,6 +1,8 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
+import Link from "next/link";
+import { toast } from "react-toastify";
 import {
   Button,
   Card,
@@ -12,33 +14,40 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { GrGoogle } from "react-icons/gr";
 
 export default function SignUpPage() {
-    const router = useRouter();
+  const router = useRouter();
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
     const name = e.target.name.value;
-    const image= e.target.image.value;
+    const image = e.target.image.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const {data, error} = await authClient.signUp.email({
-        name,
-        email,
-        password,
-        image,
-    })
+    const { data, error } = await authClient.signUp.email({
+      name,
+      email,
+      password,
+      image,
+    });
 
-    console.log({data, error});
+    if (error) {
+      toast.error(error.message || "Signup failed ❌");
+    } else {
+      toast.success("Account created successfully ✅");
 
-    if(!error) {
-        router.push('/')
+      router.push("/signin");
     }
-    
-
   };
+
+  const handleGoogleSignUp = async () => {
+      await authClient.signIn.social({
+        provider: 'google'
+      })
+    }
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
@@ -52,8 +61,8 @@ export default function SignUpPage() {
         </TextField>
 
         <TextField isRequired name="image" type="text">
-          <Label>Image URL</Label>
-          <Input placeholder="Image URL" />
+          <Label>Photo URL</Label>
+          <Input placeholder="Photo URL" />
           <FieldError />
         </TextField>
 
@@ -104,13 +113,26 @@ export default function SignUpPage() {
         <div className="flex gap-2">
           <Button type="submit">
             <Check />
-            Submit
+            Register
           </Button>
           <Button type="reset" variant="secondary">
             Reset
           </Button>
         </div>
       </Form>
+
+      <p className="text-center mt-4 text-sm">
+        Already have an account?{" "}
+        <Link href="/signin" className="text-blue-600 font-semibold hover:underline">
+          Login
+        </Link>
+      </p>
+
+
+      <p className="text-center">Or</p>
+      
+            <Button onClick={handleGoogleSignUp} variant="outline" className={'w-full'}><GrGoogle /> Sign In With Google</Button>
+
     </Card>
   );
 }

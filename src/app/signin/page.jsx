@@ -2,6 +2,8 @@
 import { authClient } from "@/lib/auth-client";
 import { createAuthClient } from "better-auth/client";
 import { Check } from "@gravity-ui/icons";
+import { toast } from "react-toastify";
+import Link from "next/link";
 import {
   Button,
   Card,
@@ -32,18 +34,24 @@ export default function SignInPage() {
       callbackURL: '/'
     })
 
+    if (error) {
+      toast.error(error.message || "Login failed ❌");
+    } else {
+      toast.success("Login Successful ✅");
+    }
+
     console.log({ data, error });
   };
 
   const handleGoogleSignIn = async () => {
-      await authClient.signIn.social({
-        provider: 'google'
-      })
-    }
+    await authClient.signIn.social({
+      provider: 'google'
+    })
+  }
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
-      <h1 className="text-center text-2xl font-bold">Log In</h1>
+      <h1 className="text-center text-2xl font-bold">LogIn</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
         {/* <TextField isRequired name="name" type="text">
@@ -105,13 +113,21 @@ export default function SignInPage() {
         <div className="flex gap-2">
           <Button type="submit">
             <Check />
-            Submit
+            LogIn
           </Button>
           <Button type="reset" variant="secondary">
             Reset
           </Button>
         </div>
       </Form>
+
+      {/* Register */}
+      <p className="text-center mt-4 text-sm">
+        Don't have an account?{" "}
+        <Link href="/signup" className="text-blue-600 font-semibold hover:underline">
+          Register
+        </Link>
+      </p>
 
       <p className="text-center">Or</p>
 

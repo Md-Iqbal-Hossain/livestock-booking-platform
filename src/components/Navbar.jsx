@@ -35,12 +35,8 @@ const Navbar = () => {
           <li>
             <Link href={"/all-animals"}>All Animals</Link>
           </li>
-          {/* <li>
-            <Link href={"/pricing"}>Pricing</Link>
-          </li>
-           */}
            <li>
-            <Link href={"/profile"}>Profile</Link>
+            <Link href={"/my-profile"}>My Profile</Link>
           </li>
         </ul>
 

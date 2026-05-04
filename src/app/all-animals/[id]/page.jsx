@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import BookingForm from "@/components/BookingForm";
 import BookingSection from "@/components/BookingSection";
+import { notFound } from "next/navigation";
 import React from 'react';
 
 const AnimalDetailPage = async ({ params }) => {
@@ -9,7 +10,11 @@ const AnimalDetailPage = async ({ params }) => {
     const res = await fetch('https://livestock-booking-platform-iqbal.vercel.app/data.json');
     const animals = await res.json();
 
-    const animal = animals.find(a => a.id == id)
+    const animal = animals.find(a => a.id == id);
+
+    if (!animal) {
+        notFound();
+    }
 
     console.log(animals);
 
@@ -23,7 +28,7 @@ const AnimalDetailPage = async ({ params }) => {
 
 
                 <div>
-                    
+
                     <Image
                         src={animal.image}
                         alt={animal.name}
@@ -52,7 +57,7 @@ const AnimalDetailPage = async ({ params }) => {
                         ৳ {animal.price.toLocaleString()}
                     </h2>
 
- 
+
                     {/* <button className="mt-6 bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition">
                         Book Now
                     </button> */}
@@ -61,7 +66,7 @@ const AnimalDetailPage = async ({ params }) => {
             </div>
 
             {/* <BookingForm /> */}
-            
+
         </div>
     );
 };
