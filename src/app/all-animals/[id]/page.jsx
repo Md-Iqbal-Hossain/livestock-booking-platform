@@ -24,7 +24,7 @@ const AnimalDetailPage = async ({ params }) => {
 
             <h1 className="text-3xl font-bold mb-6">{animal.name}</h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
 
 
                 <div>
@@ -34,7 +34,7 @@ const AnimalDetailPage = async ({ params }) => {
                         alt={animal.name}
                         width={500}
                         height={400}
-                        className="rounded-xl"
+                        className="rounded-xl w-full h-auto object-cover"
                     />
                 </div>
 
@@ -57,15 +57,9 @@ const AnimalDetailPage = async ({ params }) => {
                         ৳ {animal.price.toLocaleString()}
                     </h2>
 
-
-                    {/* <button className="mt-6 bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition">
-                        Book Now
-                    </button> */}
                     <BookingSection />
                 </div>
             </div>
-
-            {/* <BookingForm /> */}
 
         </div>
     );

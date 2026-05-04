@@ -2,7 +2,7 @@ import React from "react";
 
 const QurbaniInfo = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 mt-10 grid md:grid-cols-2 gap-6">
+    <div className="max-w-7xl mx-auto px-4 mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
 
       {/* Qurbani Tips */}
       <div className="border rounded-xl p-6 shadow-sm bg-white">

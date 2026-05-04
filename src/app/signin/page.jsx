@@ -50,21 +50,10 @@ export default function SignInPage() {
   }
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-5">
+    <Card className="border mx-auto w-full max-w-md py-10 mt-5 px-4">
       <h1 className="text-center text-2xl font-bold">LogIn</h1>
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-        {/* <TextField isRequired name="name" type="text">
-          <Label>Name</Label>
-          <Input placeholder="Enter your name" />
-          <FieldError />
-        </TextField> */}
-
-        {/* <TextField isRequired name="image" type="text">
-          <Label>Image URL</Label>
-          <Input placeholder="Image URL" />
-          <FieldError />
-        </TextField> */}
+      <Form className="flex w-full flex-col gap-4" onSubmit={onSubmit}>
 
         <TextField
           isRequired

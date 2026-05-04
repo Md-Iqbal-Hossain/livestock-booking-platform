@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "animate.css";
 
 const OutfitFont = Outfit({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export default function RootLayout({ children }) {
     >
       <body >
         <Navbar />
-        <main className="max-w-7xl mx-auto">{children}</main>
+        <main className="max-w-7xl mx-auto px-4">{children}</main>
         <Footer />
         <ToastContainer position="top-right" />
       </body>

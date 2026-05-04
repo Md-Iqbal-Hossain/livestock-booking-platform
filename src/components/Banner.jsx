@@ -7,8 +7,9 @@ const Banner = () => {
     <div className="h-[60vh] w-full bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 flex items-center rounded-lg shadow-2xl">
       {/* Overlay */}
       <div className="w-full h-full rounded-lg bg-black/50 flex items-center ">
-        <div className="max-w-7xl mx-auto px-6 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 max-w-2xl">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 text-white">
+
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 max-w-2xl animate__animated animate__fadeInDown">
             Your Trusted Livestock Marketplace
           </h1>
           <p className="text-lg md:text-xl mb-6 max-w-xl text-gray-200">
@@ -17,16 +18,12 @@ const Banner = () => {
 
           <div className="flex gap-4">
             <Link href="/all-animals">
-              <Button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white">
+              <Button className="bg-gradient-to-r from-green-500 to-emerald-600 text-white animate__animated animate__fadeInUp
+  transition-all duration-300
+  hover:scale-105 hover:shadow-lg hover:shadow-green-500/30">
                 Browse Animals
               </Button>
             </Link>
-
-            {/* <Link href="/pricing">
-              <Button variant="outline" className="text-white">
-                View Pricing
-              </Button>
-            </Link> */}
           </div>
         </div>
       </div>

@@ -3,10 +3,13 @@ import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const Navbar = () => {
   const userData = authClient.useSession();
   const user = userData.data?.user;
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleSignOut = async () => {
     await authClient.signOut();
@@ -25,18 +28,29 @@ const Navbar = () => {
             height={30}
             className="object-cover h-auto w-auto rounded-4xl"
           />
+
+          <div className="md:hidden">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-xl"
+            >
+              {menuOpen ? "✕" : "☰"}
+            </button>
+          </div>
+
           <h3 className="font-black text-lg">QurbaniHat</h3>
         </div>
 
-        <ul className="flex items-center gap-5 text-sm">
+        <ul className="hidden md:flex items-center gap-5 text-sm">
           <li>
-            <Link href={"/"}>Home</Link>
+            <Link href={"/"} className="relative transition-all duration-300 hover:text-green-600">Home
+            </Link>
           </li>
           <li>
-            <Link href={"/all-animals"}>All Animals</Link>
+            <Link href={"/all-animals"} className="relative transition-all duration-300 hover:text-green-600">All Animals</Link>
           </li>
-           <li>
-            <Link href={"/my-profile"}>My Profile</Link>
+          <li>
+            <Link href={"/my-profile"} className="relative transition-all duration-300 hover:text-green-600">My Profile</Link>
           </li>
         </ul>
 
@@ -62,6 +76,46 @@ const Navbar = () => {
           }
         </div>
       </nav>
+
+      {menuOpen && (
+        <div className="md:hidden flex flex-col gap-4 px-4 pb-4 bg-white border-t">
+
+          <Link href="/" onClick={() => setMenuOpen(false)}>
+            Home
+          </Link>
+
+          <Link href="/all-animals" onClick={() => setMenuOpen(false)}>
+            All Animals
+          </Link>
+
+          <Link href="/my-profile" onClick={() => setMenuOpen(false)}>
+            My Profile
+          </Link>
+
+          {!user && (
+            <>
+              <Link href="/signup" onClick={() => setMenuOpen(false)}>
+                Register
+              </Link>
+              <Link href="/signin" onClick={() => setMenuOpen(false)}>
+                LogIn
+              </Link>
+            </>
+          )}
+
+          {user && (
+            <button
+              onClick={() => {
+                handleSignOut();
+                setMenuOpen(false);
+              }}
+              className="text-left text-red-500"
+            >
+              SignOut
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 };

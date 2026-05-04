@@ -33,9 +33,9 @@ const TopGenerations = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold my-5">Featured Animals</h1>
+      <h1 className="text-2xl font-bold my-5 animate__animated animate__fadeIn">Featured Animals</h1>
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {animals.map((animal) => (
           <AnimalCard key={animal.id} animal={animal} />
         ))}
